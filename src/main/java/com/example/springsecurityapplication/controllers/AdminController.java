@@ -1,5 +1,6 @@
 package com.example.springsecurityapplication.controllers;
 
+import com.example.springsecurityapplication.enumm.Status;
 import com.example.springsecurityapplication.models.Image;
 import com.example.springsecurityapplication.models.Order;
 import com.example.springsecurityapplication.models.Person;
@@ -88,7 +89,7 @@ public class AdminController {
             return "product/addProduct";
         }
         // Проверка на пустоту файла
-        if(file_one != null){
+        if(!file_one.isEmpty()){
             // Дирректория по сохранению файла
             File uploadDir = new File(uploadPath);
             // Если данной дирректории по пути не сущетсвует
@@ -110,7 +111,7 @@ public class AdminController {
         }
 
         // Проверка на пустоту файла
-        if(file_two != null){
+        if(!file_two.isEmpty()){
             // Дирректория по сохранению файла
             File uploadDir = new File(uploadPath);
             // Если данной дирректории по пути не сущетсвует
@@ -132,7 +133,7 @@ public class AdminController {
         }
 
         // Проверка на пустоту файла
-        if(file_three != null){
+        if(!file_three.isEmpty()){
             // Дирректория по сохранению файла
             File uploadDir = new File(uploadPath);
             // Если данной дирректории по пути не сущетсвует
@@ -154,7 +155,7 @@ public class AdminController {
         }
 
         // Проверка на пустоту файла
-        if(file_four != null){
+        if(!file_four.isEmpty()){
             // Дирректория по сохранению файла
             File uploadDir = new File(uploadPath);
             // Если данной дирректории по пути не сущетсвует
@@ -176,7 +177,7 @@ public class AdminController {
         }
 
         // Проверка на пустоту файла
-        if(file_five != null){
+        if(!file_five.isEmpty()){
             // Дирректория по сохранению файла
             File uploadDir = new File(uploadPath);
             // Если данной дирректории по пути не сущетсвует
@@ -287,5 +288,13 @@ public class AdminController {
         }
         orderService.updateOrder(id, order);
         return "redirect:/admin/orders";
+    }
+
+    @PostMapping("/orders/{id}")
+    public String changeOrderStatus(@PathVariable("id") int id, @RequestParam("status") Status status) {
+        Order order_status = orderService.getOrderById(id);
+        order_status.setStatus(status);
+        orderService.updateOrderStatus(order_status);
+        return "redirect:/admin/orders/{id}";
     }
 }

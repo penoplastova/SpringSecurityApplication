@@ -45,6 +45,12 @@ public class OrderService {
         orderRepository.save(order);
     }
 
+    //Обновить статус заказа
+    @Transactional
+    public void updateOrderStatus(Order order) {
+        orderRepository.save(order);
+    }
+
     //Удаляем товары по id
     @Transactional
     public void deleteOrder(int id) {

@@ -8,15 +8,10 @@
 <h3>Редактирование заказа</h3>
     <br>
 <form th:method="POST" th:action="@{/admin/orders/edit/{id}(id=${editOrder.getId()})}" th:object="${editOrder}">
-    <label hidden for="status"></label>
-    <textarea hidden th:field="*{status}" placeholder="Статус" id="status"></textarea>
-    <select size="6" multiple name="hero[]">
-        <option disabled>Выберите статус</option>
-        <option value="Принят">Принят</option>
-        <option value="Отменен">Отменен</option>
-        <option value="Оформлен">Оформлен</option>
-        <option value="Ожидает">Ожидает</option>
-        <option value="Получен">Получен</option>
+    <br>
+    <label for="status">Изменить статус заказа</label>
+    <select id="status" name="status">
+        <option th:each="state:${T(com.example.springsecurityapplication.enumm.Status).values()}" th:value="${state}" th:text="${state}"></option>
     </select>
     <br>
     <label hidden for="number"></label>

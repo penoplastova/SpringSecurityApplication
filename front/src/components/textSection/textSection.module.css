@@ -1,0 +1,22 @@
+
+.text_section{
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.sale{
+    font-weight: bold;
+    color: #3d6c91;
+    background-color: #ffc228;
+    border-radius: 50%;
+}
+.cashback{
+    font-weight: bold;
+    color: #3d6c91;
+    background-color: #ffb9b7;
+    border-radius: 50%;
+}
+
+

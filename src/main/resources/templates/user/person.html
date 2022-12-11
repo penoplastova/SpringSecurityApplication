@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Пользователи</title>
+</head>
+<body>
+<h3>Список пользователей: </h3>
+<div th:each="element : ${person}">
+  <a th:href="@{/admin/person/info/{id}(id=${element.getId()})}" th:text="${element.getLogin()}"></a>
+</div>
+<a href="/admin">Назад</a>
+</body>
+</html>

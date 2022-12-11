@@ -1,0 +1,27 @@
+
+.banner_section{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin: 20px;
+}
+
+.banner{
+    display: grid;
+    grid-template-columns: 1fr 0.01fr;
+    justify-items: end;
+    align-items: center;
+    background-image: url("/public/img/banner.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+}
+
+.text_banner{
+    color: #e1526a;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: #e9f5fe 0 0 10px;
+}
+
+

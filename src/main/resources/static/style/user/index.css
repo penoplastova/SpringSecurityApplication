@@ -1,0 +1,86 @@
+
+.banner_section{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin: 20px;
+}
+
+.banner{
+    display: grid;
+    grid-template-columns: 1fr 0.01fr;
+    justify-items: end;
+    align-items: center;
+    background-image: url("../../pics/banner.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #3d6c91;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.text_banner{
+    color: #e1526a;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: #e9f5fe 0 0 10px;
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+    align-items: center;
+}
+
+.logo{
+    color: #ffc228;
+}
+
+.nav_item{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #3d6c91;
+    border-style: none;
+}
+
+.nav_item:hover{
+    color: #e1526a;
+}
+
+.cart_btn{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+}
+
+
+.text_section{
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.sale{
+    font-weight: bold;
+    color: #3d6c91;
+    background-color: #ffc228;
+    border-radius: 50%;
+}
+.cashback{
+    font-weight: bold;
+    color: #3d6c91;
+    background-color: #ffb9b7;
+    border-radius: 50%;
+}
+

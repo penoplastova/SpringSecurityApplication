@@ -1,4 +1,8 @@
-.header{
+#page{
+    margin: 0;
+}
+
+#header{
     display: grid;
     grid-template-columns: 2fr 1fr;
     background-color: #3d6c91;
@@ -26,8 +30,81 @@
     text-decoration: none;
     background-color: #3d6c91;
     border-style: none;
+    border-radius: 10px;
 }
 
 .nav_item:hover{
     color: #e1526a;
 }
+
+#container{
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#page_form{
+    display: grid;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    padding: 50px;
+    margin: 70px auto;
+    border: #3d6c91 1px;
+    border-radius: 35px;
+    transition: ease-out 0.4s;
+}
+
+#page_form:hover{
+    box-shadow: #3d6c91 0px 0px 10px 0px;
+}
+
+h3{
+    color: #3d6c91;
+    text-align: center;
+}
+
+#page_form form{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn_submit{
+    display: grid;
+    width: 100%;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #3d6c91;
+    border-style: none;
+    border-radius: 7px;
+}
+
+.btn_submit:hover{
+    color: #e1526a;
+}
+
+.form_error{
+    font-size: 15px;
+    color: red;
+}
+
+#footer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: #3d6c91;
+    padding: 20px;
+    align-items: center;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+}
+
+p{
+    color: white;
+}
+

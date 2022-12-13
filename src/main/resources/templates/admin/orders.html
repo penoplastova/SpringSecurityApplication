@@ -6,33 +6,58 @@
     <title>Все заказы</title>
 </head>
 <body>
-<h3>Заказы</h3>
+<div class="page">
 
-<form th:method="POST" th:action="@{/admin/orders/search}">
-  <fieldset>
-    <label for="search">Поиск заказа по последним четырём символам:</label>
-    <input type="search" name="search" th:value="*{value_search}" id="search">
-    <br>
-    <input type="submit" value="Искать">
-  </fieldset>
-</form>
-<h3>Результат:</h3>
-<br>
-<div th:each="order : ${search_order}">
-  <h3 th:text="'Заказ № ' + ${order.getNumber()}"></h3>
-  <img th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}" width="300px">
-  <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>
-  <p th:text="'Количество: ' + ${order.getCount()}"></p>
-  <p th:text="'Цена: ' + ${order.getPrice()}"></p>
-  <p th:text="'Статус: ' + ${order.getStatus()}"></p>
-  <p th:text="'Клиент: ' + ${order.getPerson()}"></p>
-  <hr>
-  <br>
-  <a th:href="@{/admin/orders/edit/{id}(id=${order.getId()})}">Редактировать статус заказа</a>
-  <br>
+      <div class="header">
+        <h1 class="logo">Магазинчик</h1>
+        <div class="nav">
+          <form th:method="POST" th:action="@{/logout}">
+            <button class="nav_item">Выйти из ЛК</button>
+          </form>
+          <form action="/admin/person">
+            <button class="nav_item">Пользователи</button>
+          </form>
+          <form action="/admin/orders">
+            <button class="nav_item">Заказы</button>
+          </form>
+          <form action="/admin/product/add">
+            <button class="nav_item">Добавить товар</button>
+          </form>
+        </div>
+      </div>
+
+        <div class="container">
+            <h3 class="h3">Заказы</h3>
+                <div class="filter_form">
+                  <form th:method="POST" th:action="@{/admin/orders/search}">
+                      <label for="search">Поиск заказа по последним четырём символам:</label>
+                      <input class="filter_form_input" type="search" name="search" th:value="*{value_search}" id="search">
+                      <button class="btn_submit">Найти</button>
+                  </form>
+                    <a class="card_item_link" href="/admin">Назад</a>
+                </div>
+
+            <h3 class="h3">Результат:</h3>
+                <div class="card_item" th:each="order : ${search_order}">
+                  <h3 th:text="'Заказ № ' + ${order.getNumber()}"></h3>
+                  <img class="card_image" th:src="'/img/' + ${order.getProduct().imageList[0].getFileName()}">
+                  <p class="card_title"  th:text="'Наименование: ' + ${order.getProduct().getTitle()}"></p>
+                  <p th:text="'Количество: ' + ${order.getCount()}"></p>
+                  <p th:text="'Цена: ' + ${order.getPrice()}"></p>
+                  <p th:text="'Статус: ' + ${order.getStatus()}"></p>
+                  <p th:text="'Клиент: ' + ${order.getPerson()}"></p>
+                  <a class="card_item_link" th:href="@{/admin/orders/edit/{id}(id=${order.getId()})}">Редактировать статус заказа</a>
+                </div>
+
+        </div>
+
+      <div class="footer">
+        <h1 class="logo">Магазинчик</h1>
+        <p class="footer_p">
+          +7(495)777-77-77<br>
+          Единая справочная служба г. Москвы
+        </p>
+      </div>
 </div>
-<br>
-<a href="/admin">Назад</a>
-<br>
 </body>
 </html>

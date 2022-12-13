@@ -39,7 +39,8 @@
 }
 
 .container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     margin: auto auto;
     text-align: center;
     width: 100%;
@@ -47,8 +48,18 @@
 
 .card_info{
     display: grid;
-    margin: auto auto;
+    margin: 30px;
+    padding: inherit;
+}
+
+.card_info p{
+    text-align: left;
+}
+
+.text_title{
     text-align: center;
+    font-weight: bold;
+    color: #3d6c91;
 }
 
 .card_item_link{
@@ -61,6 +72,7 @@
     border: #e1526a;
     border-radius: 30px;
     padding: 5px;
+    text-decoration: none;
 }
 
 .card_item_link:hover{
@@ -70,8 +82,7 @@
 
 .thumb{
     display: grid;
-    float: left;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
 }
 
 .thumb img{

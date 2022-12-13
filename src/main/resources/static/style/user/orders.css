@@ -1,0 +1,104 @@
+.page{
+    margin: 0;
+    overflow: auto;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: #3d6c91;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: end;
+    align-items: center;
+}
+
+.logo{
+    color: #ffc228;
+}
+
+.nav_item{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #3d6c91;
+    border-style: none;
+    border-radius: 10px;
+}
+
+.nav_item:hover{
+    color: #e1526a;
+}
+
+.container{
+    display: flex;
+    margin: auto auto;
+    text-align: center;
+    width: 100%;
+}
+
+.all_products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.card_item{
+    border: 1px solid #3d6c91;
+    border-radius: 35px;
+    padding: 15px;
+    margin: 20px;
+    transition: ease-out 0.4s;
+    width: 30%;
+}
+
+.card_item:hover{
+    box-shadow: #3d6c91 0px 0px 10px 0px;
+}
+
+.card_image{
+    width: 200px;
+    align-self: center;
+    margin: auto;
+    justify-self: end;
+}
+
+.card_title{
+    color: black;
+    font-weight: bold;
+    justify-self: end;
+}
+
+.card_order{
+    color: #3d6c91;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.card_status{
+    color: #e1526a;
+    font-weight: bold;
+}
+
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: #3d6c91;
+    padding: 20px;
+    align-items: center;
+    position: sticky;
+    bottom:0;
+    width: 100%;
+}
+
+.footer_p{
+    color: white;
+}

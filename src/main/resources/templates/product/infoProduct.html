@@ -40,6 +40,7 @@
             <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
             <p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
             <a class="card_item_link" th:href="@{/cart/add/{id}(id=${product.getId()})}">Добавить в корзину</a>
+            <a class="card_item_link" href="/product">Назад</a>
         </div>
         <div class="thumb">
             <img  th:each="img : ${product.getImageList()}" th:src="'/img/' + ${img.getFileName()}" onclick="changeSizeImage(this)"/>

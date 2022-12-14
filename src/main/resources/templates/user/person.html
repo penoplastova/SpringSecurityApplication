@@ -29,9 +29,10 @@
 
   <div class="container">
       <h3 class="h3">Список пользователей: </h3>
-      <div th:each="element : ${person}">
+      <div class="person_list" th:each="element : ${person}">
         <a th:href="@{/admin/person/info/{id}(id=${element.getId()})}" th:text="${element.getLogin()}"></a>
       </div>
+    <br>
       <a class="card_item_link" href="/admin">Назад</a>
   </div>
 

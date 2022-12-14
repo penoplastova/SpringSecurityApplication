@@ -28,7 +28,7 @@
   </div>
 
   <div class="container">
-      <h3>Редактирование пользователей</h3>
+      <h3 class="h3">Редактирование пользователей</h3>
         <div class="edit_form">
             <form method="POST" th:action="@{/admin/person/edit/{id}(id=${editPerson.getId()})}" th:object="${editPerson}">
               <label for="login">Введите логин: </label>
@@ -42,9 +42,7 @@
               <label for="role">Введите роль: </label>
               <input type="text" th:field="*{role}" id="role">
               <div class="edit_error" th:if="${#fields.hasErrors('role')}" th:errors="*{role}"></div>
-
-              <input type="submit" value="Редактировать">
-              <button class="btn_submit">Добавить</button>
+              <button class="btn_submit">Редактировать</button>
             </form>
           <a class="card_item_link" href="/admin/person">Назад</a>
         </div>

@@ -44,6 +44,14 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    height: 720px;
+}
+
+.person_list{
+    display: grid;
+    padding: 5px;
+    gap: 10px;
+    margin: auto;
 }
 
 .card_item_link{
